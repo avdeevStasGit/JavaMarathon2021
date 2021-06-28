@@ -10,12 +10,13 @@ public class Task2 {
         System.out.println("Введите число до: ");
         int b = scanner.nextInt();
 
+        if(a >= b) {
+            System.out.println("Некорректный ввод");
+        }
+
         for(int i = a; i < b; i++) {
 
-            boolean x = i % 5 == 0;
-            boolean y = i % 10 != 0;
-
-            if((x) && (y)) {
+            if((i % 5 == 0) && (i % 10 != 0)) {
                 System.out.print(i + " ");
             }
         }
