@@ -31,6 +31,12 @@ import java.util.Scanner;
 
 public class Task1 {
     public static void main(String[] args) {
+        int over8 = 0;
+        int equals1 = 0;
+        int evenNum = 0;
+        int oddNum = 0;
+        int sum = 0;
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число:");
         int n = scanner.nextInt();
@@ -41,6 +47,20 @@ public class Task1 {
         for(int i = 0; i < array.length; i++) {
             array[i] = (int) Math.round((Math.random() * 10) + 1);
 
+            if(array[i] > 8) {
+                over8++;
+            }
+            if(array[i] == 1) {
+                equals1++;
+            }
+            if(array[i] % 2 == 0) {
+                evenNum++;
+            }
+            if(array[i] % 2 != 0) {
+                oddNum++;
+            }
+
+            sum += array[i];
         }
 
         System.out.println("Введено число " + n + "." + " Сгенерирован следующий массив:");
@@ -48,7 +68,12 @@ public class Task1 {
 
         System.out.println("Информация о массиве:\n");
         System.out.println("Длина массива: " + array.length + "\n" +
-                           "Количество чисел больше 8: "
+                           "Количество чисел больше 8: " + over8 + "\n" +
+                           "Количество чисел равных 1: " + equals1 + "\n" +
+                           "Количество четных чисел: " + evenNum + "\n" +
+                           "Количество нечетных чисел: " + oddNum + "\n" +
+                           "Сумма всех элементов массива: " + sum
+
         );
 
 
