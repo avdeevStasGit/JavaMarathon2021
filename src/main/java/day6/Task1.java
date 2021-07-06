@@ -1,5 +1,7 @@
 package day6;
 
+
+
 /**
  * 1. Для этого задания скопируйте классы Автомобиль и Мотоцикл из предыдущего дня в пакет текущего дня.
  *
@@ -15,6 +17,19 @@ package day6;
 
 public class Task1 {
     public static void main(String[] args) {
+        Car car = new Car();
+        car.setAge(1990);
+        car.setColor("Red");
+        car.setModel("Porshe");
+
+        Motorbike motorbike = new Motorbike(1995, "Blue", "PorsheMoto");
+
+        car.info();
+        motorbike.info();
+
+        System.out.println(car.yearDifference(2015));
+        System.out.println(motorbike.yearDifference(1980));
+
 
     }
 }
