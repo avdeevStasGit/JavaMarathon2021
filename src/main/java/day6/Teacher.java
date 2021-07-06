@@ -41,7 +41,7 @@ public class Teacher {
                 break;
         }
 
-        System.out.println("Преподаватель " + getName() + " оценил(а) студента с именем " + student.getName() + " по предмету " +
-                            getSubject() + " на оценку " + bewertung);
+        System.out.println("Преподаватель " + this.name + " оценил(а) студента с именем " + student.getName() + " по предмету " +
+                            this.subject + " на оценку " + bewertung);
     }
 }
