@@ -5,14 +5,14 @@ public class Airplane {
     private int year; //(год выпуска)
     private int length; //(длина)
     private int weight; //(вес)
-    private int fuel = 0; //(количество топлива в баке)
+    private int fuel; //(количество топлива в баке)
 
-    public Airplane(String producer, int year, int length, int weight, int fuel) {
+    public Airplane(String producer, int year, int length, int weight) {
         this.producer = producer;
         this.year = year;
         this.length = length;
         this.weight = weight;
-        this.fuel = fuel;
+        this.fuel = 0;
     }
 
     public int getFuel() {
@@ -37,5 +37,19 @@ public class Airplane {
 
     public void setFuel(int fuel) {
         this.fuel = fuel;
+    }
+
+    // выводит сообщение в следующем формате:
+    // * “Изготовитель: … , год выпуска: … , длина: ..., вес: ..., количество топлива в баке: …”
+    public void info() {
+        System.out.println("Изготовитель: " + producer +
+                ", год выпуска: " + year +
+                ", длина: " + length +
+                ", вес: " + weight +
+                ", количество топлива в баке: " + fuel);
+    }
+
+    public void fillUp(int n) {
+        fuel += n;
     }
 }
