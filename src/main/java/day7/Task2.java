@@ -1,5 +1,7 @@
 package day7;
 
+import java.util.Random;
+
 /**
  * 2. Дворовый футбол.
  * Для игры в футбол во дворе требуется 6 человек (3х3). Класс Игрок (англ. Player) содержит следующие поля:
@@ -31,6 +33,20 @@ package day7;
 
 public class Task2 {
     public static void main(String[] args) {
+        Random random = new Random();
+        int min = 90;
+        int max = 100;
+        int diff = max - min;
+        int i = random.nextInt(diff + 1);
+
+        Player player1 = new Player(i);
+        Player player2 = new Player(i);
+        Player player3 = new Player(i);
+        Player player4 = new Player(i);
+        Player player5 = new Player(i);
+        Player player6 = new Player(i);
+
+
 
     }
 }
