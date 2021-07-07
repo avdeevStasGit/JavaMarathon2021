@@ -37,10 +37,8 @@ public class Task2 {
         Random r = new Random();
         int i = r.nextInt((101 - 90) + 1) + 90;
 
-        Player player1 = new Player(15);
-        Player player2 = new Player(i);
-        Player player3 = new Player(i);
-        Player player4 = new Player(i);
+        Player player1 = new Player(1);
+
 
 
         player1.run();

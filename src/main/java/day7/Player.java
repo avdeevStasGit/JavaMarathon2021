@@ -10,7 +10,7 @@ public class Player {
     public Player(int stamina) {
         if(countPlayers < 6) {
             this.stamina = stamina;
-            countPlayers++;
+            Player.countPlayers++;
         }
     }
 
@@ -40,7 +40,7 @@ public class Player {
     //выводит сообщение в зависимости от количества игроков на поле.
     public static void info() {
         if(Player.countPlayers < 6) {
-            System.out.println("Команды неполные. На поле еще есть " + Player.countPlayers + " свободных мест.");
+            System.out.println("Команды неполные. На поле еще есть " + Math.abs(Player.countPlayers - 6) + " свободных мест.");
         }
         if(Player.countPlayers >= 6) {
             System.out.println("На поле нет свободных мест");
