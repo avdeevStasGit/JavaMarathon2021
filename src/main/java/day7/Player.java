@@ -8,31 +8,41 @@ public class Player {
     private final static int MIN_STAMINA = 0;
 
     public Player(int stamina) {
-        this.stamina = stamina;
+        if(countPlayers < 6) {
+            this.stamina = stamina;
+            countPlayers++;
+        }
     }
 
     public int getStamina() {
         return stamina;
     }
 
-    public int getCountPlayers() {
+    public static int getCountPlayers() {
         return countPlayers;
     }
 
-    //игрок бежит при вызове этого метода.
+    //игрок бежит при вызове этого метода. Этот метод уменьшает выносливость игрока на 1 при однократном вызове.
+    // * Когда выносливость достигает 0, игроку нужен отдых и он уходит с поля.
     public void run() {
-        if(stamina == 0) {
-
+        if(this.stamina > MIN_STAMINA && this.stamina < MAX_STAMINA) {
+            this.stamina -= 1;
+            if(this.stamina == 0) {
+                Player.countPlayers--;
+            }
         }
-        stamina -= 1;
+
+
+
+        System.out.println("Выносливость: " + this.stamina);
     }
 
     //выводит сообщение в зависимости от количества игроков на поле.
-    public void info() {
-        if(countPlayers < 6) {
-            System.out.println("Команды неполные. На поле еще есть ... свободных мест");
+    public static void info() {
+        if(Player.countPlayers < 6) {
+            System.out.println("Команды неполные. На поле еще есть " + Player.countPlayers + " свободных мест.");
         }
-        else {
+        if(Player.countPlayers >= 6) {
             System.out.println("На поле нет свободных мест");
         }
     }
