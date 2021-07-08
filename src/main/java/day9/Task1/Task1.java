@@ -33,6 +33,13 @@ package day9.Task1;
 
 public class Task1 {
     public static void main(String[] args) {
+        Student student = new Student("Стас", "32B");
+        Teacher teacher = new Teacher("Елена", "Информатика");
 
+        System.out.println("Название учебной группы у объекта-студента: " + student.getGroupName());
+        System.out.println("Название предмета у объекта-преподавателя: " + teacher.getSubjectName() + "\n");
+
+        student.printInfo();
+        teacher.printInfo();
     }
 }
