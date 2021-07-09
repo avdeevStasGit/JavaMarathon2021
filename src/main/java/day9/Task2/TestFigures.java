@@ -1,5 +1,6 @@
 package day9.Task2;
 
+
 /**
  * 2. Создайте абстрактный класс Фигура (англ. Figure). Этот класс будет являться абстрактным представлением
  * геометрической фигуры в нашей программе.
@@ -62,11 +63,33 @@ public class TestFigures {
            new Circle(5, "Blue")
         };
 
-        public static double calculateRedPerimeter(Figure[] figures) {
+        System.out.println(calculateRedPerimeter(figures));
+        System.out.println(calculateRedArea(figures));
+
+
+    }
+
+    public static double calculateRedPerimeter(Figure[] figures) {
+
+        double per = 0;
+        for (Figure figure : figures) {
+            if (figure.getColor().equals("Red")) {
+                per = figure.perimeter();
+            }
+        }
+
+        return per;
+    }
+
+    public static double calculateRedArea(Figure[] figures) {
+        double area = 0;
+        for (int i = 0; i < figures.length; i++) {
+                if (figures[i].getColor().equals("Red")) {
+                    area = figures[i].area();
+                }
 
         }
-        public static double calculateRedArea(Figure[] figures) {
 
-        }
+        return area;
     }
 }

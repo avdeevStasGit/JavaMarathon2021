@@ -16,12 +16,12 @@ public class Triangle extends Figure {
     public double area() {
         double area = (s1 + s2 + s3) / 2.0d;
         return Math.sqrt(area * (area - s1) * (area - s2) * (area - s3));
-
     }
 
     @Override
     public double perimeter() {
-        return s1 + s2 + s3;
+        double p = s1 + s2 + s3;
+        return p;
 
     }
 }
