@@ -74,7 +74,7 @@ public class TestFigures {
         double per = 0;
         for (Figure figure : figures) {
             if (figure.getColor().equals("Red")) {
-                per = figure.perimeter();
+                per += figure.perimeter();
             }
         }
 
@@ -85,7 +85,7 @@ public class TestFigures {
         double area = 0;
         for (int i = 0; i < figures.length; i++) {
                 if (figures[i].getColor().equals("Red")) {
-                    area = figures[i].area();
+                    area += figures[i].area();
                 }
 
         }

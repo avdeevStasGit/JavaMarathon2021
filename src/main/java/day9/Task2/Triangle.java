@@ -14,13 +14,13 @@ public class Triangle extends Figure {
 
     @Override
     public double area() {
-        double area = (s1 + s2 + s3) / 2.0d;
-        return Math.sqrt(area * (area - s1) * (area - s2) * (area - s3));
+        double area = (this.s1 + this.s2 + this.s3) / 2.0d;
+        return Math.sqrt(area * (area - this.s1) * (area - this.s2) * (area - this.s3));
     }
 
     @Override
     public double perimeter() {
-        double p = s1 + s2 + s3;
+        double p = this.s1 + this.s2 + this.s3;
         return p;
 
     }
