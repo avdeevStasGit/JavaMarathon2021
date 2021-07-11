@@ -11,4 +11,11 @@ public class Warehouse { //Склад
     public int getCountDeliveredOrders() {
         return countDeliveredOrders;
     }
+
+    @Override
+    public String toString() {
+        return "СКЛАД \n" +
+                "Количество собранных заказов: \n" + countPickedOrders +
+                "Количество доставленных заказов: " + countDeliveredOrders;
+    }
 }
