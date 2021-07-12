@@ -1,19 +1,21 @@
 package day11.task1;
 
 public class Courier implements Worker { // Курьер
-    private int salary; // Pаработная плата
-    private boolean isPayed; // Был выплачен бонус или нет
+    private int salary; // Заработная плата
+    private boolean isPayed = false; // Был выплачен бонус или нет
+    private Warehouse countDeliveredOrders;
+    private int staff = 0; // Количество сотрудников
 
-    public Courier(int salary, boolean isPayed) {
-        this.salary = salary;
-        this.isPayed = isPayed;
+    public Courier(Warehouse countDeliveredOrders) {
+        this.countDeliveredOrders = countDeliveredOrders;
+        staff++;
     }
 
     public int getSalary() {
         return salary;
     }
 
-    public boolean isPayed() {
+    public boolean getIsPayed() {
         return isPayed;
     }
 
@@ -24,11 +26,51 @@ public class Courier implements Worker { // Курьер
 
     @Override
     public int doWork() {
-        return 0;
+        this.countDeliveredOrders.countDeliveredOrders++;
+        return this.salary += 100;
     }
 
     @Override
     public int bonus() {
-        return 0;
+        int salaryBonus = 0;
+
+        if (getIsPayed()) {
+            if (countDeliveredOrders.getCountDeliveredOrders() < 10000) {
+                System.out.println("Бонус пока не доступен");
+            }
+
+            if (staff > 1 && countDeliveredOrders.getCountDeliveredOrders() == 10000) {
+                int x = staff / 10000;
+                isPayed = true;
+                salaryBonus = 70000;
+            }
+
+            if (countDeliveredOrders.getCountDeliveredOrders() == 10000) {
+                isPayed = true;
+                salaryBonus = 70000;
+            }
+        }
+        else {
+            System.out.println("Бонус уже был выплачен");
+        }
+        return this.salary += salaryBonus;
     }
+
+
+
+
+//    @Override
+//    public int bonus() {
+//        if(countDeliveredOrders.getCountDeliveredOrders() < 10000) {
+//            System.out.println("Бонус пока не доступен");
+//        }
+//
+//        int salaryBonus = 0;
+//        if(countDeliveredOrders.getCountDeliveredOrders() == 10000) {
+//            isPayed = true;
+//            salaryBonus = 50000;
+//        }
+//
+//        return this.salary += salaryBonus;
+//    }
 }
