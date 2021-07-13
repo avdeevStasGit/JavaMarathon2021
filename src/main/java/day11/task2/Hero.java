@@ -19,7 +19,7 @@ public abstract class Hero implements PhysAttack {
         int heroHealthValue = hero.getHealth() - physAtt - (int) (physAtt * hero.physDef);
 
         if(heroHealthValue < 0) {
-            System.out.println("Герой " + getName() + " пал в бою.");
+            System.out.println("Герой " + hero.getName() + " пал в бою.");
             hero.setHealth(0);
         }
         else {
@@ -30,8 +30,8 @@ public abstract class Hero implements PhysAttack {
 
     @Override
     public String toString() {
-        return "Hero: " + getName() +
-                "HEALTH=" + getHealth();
+        return getName() +
+                " health=" + getHealth();
     }
 
     public int getMIN_HEALTH() {

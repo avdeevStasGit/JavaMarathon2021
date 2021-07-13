@@ -15,7 +15,7 @@ public class Magician extends Hero implements MagicAttack, PhysAttack {
         int heroHealthValue = hero.getHealth() - magicAtt - (int) (magicAtt * hero.getMagicDef());
         if(heroHealthValue < 0) {
             hero.setHealth(0);
-            System.out.println("Герой " + getName() + " пал в бою.");
+            System.out.println("Герой " + hero.getName() + " пал в бою.");
         }
         else {
             hero.setHealth(heroHealthValue);
