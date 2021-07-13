@@ -18,7 +18,7 @@ public abstract class Hero implements PhysAttack {
     public void physicalAttack(Hero hero) {
         int heroHealthValue = hero.getHealth() - physAtt - (int) (physAtt * hero.physDef);
 
-        if(heroHealthValue == 0 || heroHealthValue < 0) {
+        if(heroHealthValue < 0) {
             System.out.println("Герой " + getName() + " пал в бою.");
             hero.setHealth(0);
         }

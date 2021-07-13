@@ -1,14 +1,16 @@
 package day11.task2;
 
 public class Shaman extends Hero implements Healer, PhysAttack, MagicAttack {
-    private int health = 100; //(здоровье)
-    private double physDef = 0.2; //(процент поглощения физического урона)
-    private double magicDef = 0.2;//(процент поглощения магического урона)
-    private int physAtt = 10; //(величина физической атаки), по необходимости
-    private int magicAtt = 15; //(величина магической атаки), по необходимости
+    private int magicAtt = 15; // Величина магической атаки
+    private static final int HEALHIMSELF = 50;
+    private static final int HEALTEAMMATE = 30;
 
     public Shaman(String nameHero) {
         super(nameHero);
+        setPhysDef(0.2);
+        setMagicDef(0.2);
+        setPhysAtt(10);
+
     }
 
     @Override
@@ -26,8 +28,4 @@ public class Shaman extends Hero implements Healer, PhysAttack, MagicAttack {
 
     }
 
-    @Override
-    public void physicalAttack(Hero hero) {
-
-    }
 }
