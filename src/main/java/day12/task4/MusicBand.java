@@ -43,4 +43,10 @@ public class MusicBand {
         return  "name='" + name + '\'' +
                 ", year=" + year;
     }
+
+    public static void transferMembers(MusicBand a, MusicBand b) {
+        for(String member : a.getMembers()) {
+            b.getMembers().add(member);
+        }
+    }
 }
