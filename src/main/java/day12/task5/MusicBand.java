@@ -40,8 +40,11 @@ public class MusicBand {
 
     @Override
     public String toString() {
-        return  "name='" + name + '\'' +
-                ", year=" + year;
+        return "MusicBand{" +
+                "name='" + name + '\'' +
+                ", year=" + year +
+                ", members=" + members +
+                '}';
     }
 
     public static void transferMembers(MusicBand a, MusicBand b) {
