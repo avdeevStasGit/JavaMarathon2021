@@ -48,5 +48,10 @@ public class MusicBand {
         for(String member : a.getMembers()) {
             b.getMembers().add(member);
         }
+        a.getMembers().clear();
+    }
+
+    public void printMembers() {
+        System.out.println(this.members);
     }
 }
