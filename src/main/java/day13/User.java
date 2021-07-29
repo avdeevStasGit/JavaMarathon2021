@@ -17,7 +17,7 @@ public class User {
 
     public User(String username) {
         this.username = username;
-        subscriptions = new ArrayList<User>();
+        this.subscriptions = new ArrayList<User>();
     }
 
     public void subscribe(User user){ // Подписывает пользователя на пользователя user
@@ -34,7 +34,7 @@ public class User {
     // Возвращает True, если пользователь user является другом и False, если пользователь user не является другом.
     // Подумайте, что такое дружба в контексте соц. сетей.
     public boolean isFriend(User user) {
-
+        return this.isSubscribed(user) && user.isSubscribed(this);
     }
 
 }
