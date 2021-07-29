@@ -32,9 +32,13 @@ public class User {
     }
 
     // Возвращает True, если пользователь user является другом и False, если пользователь user не является другом.
-    // Подумайте, что такое дружба в контексте соц. сетей.
     public boolean isFriend(User user) {
         return this.isSubscribed(user) && user.isSubscribed(this);
+    }
+
+    // Отправляет сообщение с текстом text пользователю user.
+    public void sendMessage(User user, String text) {
+
     }
 
 }
