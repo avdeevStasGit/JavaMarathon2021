@@ -15,6 +15,14 @@ public class User {
         return subscriptions;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setSubscriptions(List<User> subscriptions) {
+        this.subscriptions = subscriptions;
+    }
+
     public User(String username) {
         this.username = username;
         this.subscriptions = new ArrayList<User>();
@@ -38,7 +46,11 @@ public class User {
 
     // Отправляет сообщение с текстом text пользователю user.
     public void sendMessage(User user, String text) {
-
+        MessageDatabase.addNewMessage(this, user, text);
     }
 
+    @Override
+    public String toString() {
+        return username;
+    }
 }
